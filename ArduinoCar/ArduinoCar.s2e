@@ -1,0 +1,79 @@
+{
+	"extensionName": "ArduinoCar",
+	"description": "Extension for Elegoo Robot Car V2.0",
+	"version": "1.0",
+	"author": "mromani(mr3188@gmail.com)",
+	"homepage": "http://www.mblock.cc/posts/create-extensions-for-mblock",
+	"sort":0,
+	"javascriptURL":"js/ArduinoCar.js",
+  	"firmware":"1.0",
+  	"extensionPort":0,
+	"tags" : "makeblock,ArduinoCar,mromani",
+	"blockSpecs": [
+	["w",	"init Smart Car",	"initCar",
+		{	"setup":"\npinMode(enableRight, OUTPUT);\npinMode(enableLeft, OUTPUT);\npinMode(rightMotor1, OUTPUT);\npinMode(rightMotor2, OUTPUT);\npinMode(leftMotor1, OUTPUT);\npinMode(leftMotor2, OUTPUT);\n",
+			"inc":"",
+			"def":"int enableRight=5;\nint enableLeft=11;\nint rightMotor1=7;\nint rightMotor2=6;\nint leftMotor1=8;\nint leftMotor2=9;\n",
+			"work":"",
+			"loop":""	}	],
+
+			["w",	"go forward",	"goForward", "0",
+				{	"encode":"{n0}",
+					"setup":"",
+					"inc":"",
+					"def":"",
+					"setup":"",
+					"work":"\ndigitalWrite(rightMotor1, LOW);\ndigitalWrite(rightMotor2, HIGH);\ndigitalWrite(leftMotor1, LOW);\ndigitalWrite(leftMotor2, HIGH);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
+					"loop":""
+				}	],
+
+				["w",	"go back",	"goBack", "0",
+					{	"encode":"{n0}",
+						"setup":"",
+						"inc":"",
+						"def":"",
+						"setup":"",
+						"work":"\ndigitalWrite(rightMotor1, HIGH);\ndigitalWrite(rightMotor2, LOW);\ndigitalWrite(leftMotor1, HIGH);\ndigitalWrite(leftMotor2, LOW);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
+						"loop":""
+					}	],
+
+					["w",	"turn left",	"turnLeft", "0",
+						{	"encode":"{n0}",
+							"setup":"",
+							"inc":"",
+							"def":"",
+							"setup":"",
+							"work":"\ndigitalWrite(rightMotor1, LOW);\ndigitalWrite(rightMotor2, HIGH);\ndigitalWrite(leftMotor1, HIGH);\ndigitalWrite(leftMotor2, LOW);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
+							"loop":""
+						}	],
+
+						["w",	"turn right",	"turnRight", "0",
+							{	"encode":"{n0}",
+								"setup":"",
+								"inc":"",
+								"def":"",
+								"setup":"",
+								"work":"\ndigitalWrite(rightMotor1, HIGH);\ndigitalWrite(rightMotor2, LOW);\ndigitalWrite(leftMotor1, LOW);\ndigitalWrite(leftMotor2, HIGH);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
+								"loop":""
+							}	],
+
+				["w",	"stop",	"stop", "0",
+					{"encode":"{n0}",
+						"setup":"",
+						"inc":"",
+						"def":"",
+						"setup":"",
+						"work":"\ndigitalWrite(enableRight, LOW);\ndigitalWrite(enableLeft, LOW);\n",
+						"loop":""
+					}	]
+	],
+	"menus": {
+		"digital":["HIGH","LOW"]
+	},
+	"values":{
+		"HIGH":1,
+		"LOW":0
+	},
+	"translators":{
+	}
+}
