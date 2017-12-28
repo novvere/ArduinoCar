@@ -22,7 +22,6 @@
 					"setup":"",
 					"inc":"",
 					"def":"",
-					"setup":"",
 					"work":"\ndigitalWrite(rightMotor1, LOW);\ndigitalWrite(rightMotor2, HIGH);\ndigitalWrite(leftMotor1, LOW);\ndigitalWrite(leftMotor2, HIGH);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
 					"loop":""
 				}	],
@@ -32,7 +31,6 @@
 						"setup":"",
 						"inc":"",
 						"def":"",
-						"setup":"",
 						"work":"\ndigitalWrite(rightMotor1, HIGH);\ndigitalWrite(rightMotor2, LOW);\ndigitalWrite(leftMotor1, HIGH);\ndigitalWrite(leftMotor2, LOW);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
 						"loop":""
 					}	],
@@ -42,7 +40,6 @@
 							"setup":"",
 							"inc":"",
 							"def":"",
-							"setup":"",
 							"work":"\ndigitalWrite(rightMotor1, LOW);\ndigitalWrite(rightMotor2, HIGH);\ndigitalWrite(leftMotor1, HIGH);\ndigitalWrite(leftMotor2, LOW);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
 							"loop":""
 						}	],
@@ -52,7 +49,6 @@
 								"setup":"",
 								"inc":"",
 								"def":"",
-								"setup":"",
 								"work":"\ndigitalWrite(rightMotor1, HIGH);\ndigitalWrite(rightMotor2, LOW);\ndigitalWrite(leftMotor1, LOW);\ndigitalWrite(leftMotor2, HIGH);\ndigitalWrite(enableRight, HIGH);\ndigitalWrite(enableLeft, HIGH);\n",
 								"loop":""
 							}	],
@@ -62,10 +58,18 @@
 						"setup":"",
 						"inc":"",
 						"def":"",
-						"setup":"",
 						"work":"\ndigitalWrite(enableRight, LOW);\ndigitalWrite(enableLeft, LOW);\n",
 						"loop":""
 					}	]
+
+					["w",	"look at",	"lookAt", "90",
+						{"encode":"{n0}",
+							"setup":"",
+							"inc":"#incude<Servo.h>",
+							"def":"",
+							"work":"\ndigitalWrite(enableRight, LOW);\ndigitalWrite(enableLeft, LOW);\n",
+							"loop":""
+						}	]
 	],
 	"menus": {
 		"digital":["HIGH","LOW"]
